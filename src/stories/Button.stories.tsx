@@ -1,19 +1,23 @@
-import Button from "../components/Button";
+import Button, { BtnProps } from "../components/Button";
+import { Story, Meta } from "@storybook/react";
 
 export default {
 	title: "Button",
 	component: Button,
-};
+	argTypes: { handleClick: { action: "handleClick" } },
+} as Meta;
 
-export const Primary = () => (
-	<Button
-		backgroundColor='red'
-		label='Press Me '
-		color='white'
-		border='none'
-		size='md'
-	/>
-);
+const Template: Story = (args: any) => <Button {...args} />;
+
+export const Primary = Template.bind({});
+Primary.args = {
+	backgroundColor: "red",
+	label: "Press Me ",
+	color: "white",
+	border: "none",
+	size: "md",
+    
+};
 
 export const Outlined = () => (
 	<Button
@@ -22,10 +26,9 @@ export const Outlined = () => (
 		color='black'
 		border='1px solid #ebecec'
 		size='lg'
+        
 	/>
 );
-
-
 
 export const OutlinedRounded = () => (
 	<Button
@@ -34,6 +37,6 @@ export const OutlinedRounded = () => (
 		color='black'
 		border='1px solid #ebecec'
 		size='md'
-        borderRadius="20px"
+		borderRadius='20px'
 	/>
 );

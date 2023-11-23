@@ -1,6 +1,6 @@
 import React from "react";
 
-type BtnProps = {
+export type BtnProps = {
 	label: string;
 	onClick?: () => void;
 	backgroundColor: string;
